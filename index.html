@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Batch English Learning Card Maker</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f1e7;color:#26364a;font-family:Segoe UI,Microsoft YaHei,sans-serif}
+main{max-width:980px;margin:auto;padding:30px}.hero{background:#fffdf8;border:1px solid #efe4d5;border-radius:18px;padding:28px;box-shadow:0 8px 28px rgba(50,40,24,.08)}
+h1{margin:0 0 10px;color:#17636b;font-size:34px}.sub{color:#5e6c7f;line-height:1.8}.switch{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+button,a.button{border:0;border-radius:12px;padding:12px 16px;background:#17636b;color:white;text-decoration:none;font-weight:700;cursor:pointer}.soft{background:#e5f3f4!important;color:#17636b!important}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}.panel{background:white;border:1px solid #efe4d5;border-radius:14px;padding:18px}
+ul{line-height:1.9;padding-left:20px}code{background:#f1eadf;border-radius:6px;padding:2px 6px}.lang{display:none}.lang.active{display:block}
+</style>
+<main>
+  <section class="hero">
+    <h1>Batch English Learning Card Maker</h1>
+    <p class="sub">A Codex Skill for batch-generating children's English learning cards, lesson pages, parent guides, review plans, quality reports, and downloadable ZIP packs.</p>
+    <div class="switch">
+      <button onclick="showLang('zh')">简体中文</button>
+      <button class="soft" onclick="showLang('en')">English</button>
+      <a class="button soft" href="./README.zh-CN.md">中文 README</a>
+      <a class="button soft" href="./README.md">English README</a>
+    </div>
+  </section>
+
+  <section id="zh" class="lang active">
+    <div class="grid">
+      <div class="panel">
+        <h2>它能做什么</h2>
+        <ul>
+          <li>批量生成英语单词卡、短句卡、组合卡和多句学习页。</li>
+          <li>每条内容包含英文、IPA 音标和中文意思。</li>
+          <li>自动输出今日学习单、互动学习页、家长进度页和复习安排。</li>
+          <li>生成家长使用包和完整检查包。</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>适合谁</h2>
+        <ul>
+          <li>中文家长带孩子英语启蒙。</li>
+          <li>老师批量制作课堂卡片。</li>
+          <li>小红书、社群或 RedSkill 创作者做免费学习包。</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>入口文件</h2>
+        <ul>
+          <li><code>download.html</code>：学习包总入口。</li>
+          <li><code>parent-use-pack.zip</code>：发给家长的使用包。</li>
+          <li><code>qa-dashboard.html</code>：制作者质检入口。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="en" class="lang">
+    <div class="grid">
+      <div class="panel">
+        <h2>What it does</h2>
+        <ul>
+          <li>Batch-generates vocabulary, sentence, combo, and lesson-page cards.</li>
+          <li>Includes English text, IPA phonetics, and Chinese meanings.</li>
+          <li>Creates a today learning sheet, interactive player, parent dashboard, and review plan.</li>
+          <li>Exports a parent-use ZIP and a full inspection ZIP.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Who it is for</h2>
+        <ul>
+          <li>Chinese-speaking parents teaching children English.</li>
+          <li>Teachers making classroom learning cards.</li>
+          <li>Creators sharing free English learning packs.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h2>Main files</h2>
+        <ul>
+          <li><code>download.html</code>: main learning-pack entry.</li>
+          <li><code>parent-use-pack.zip</code>: parent-facing pack.</li>
+          <li><code>qa-dashboard.html</code>: creator quality-check entry.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+function showLang(lang){
+  document.querySelectorAll('.lang').forEach(x=>x.classList.remove('active'));
+  document.getElementById(lang).classList.add('active');
+  document.documentElement.lang=lang==='zh'?'zh-CN':'en';
+}
+</script>
+</html>
+

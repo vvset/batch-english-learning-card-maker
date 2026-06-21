@@ -1,0 +1,7 @@
+interface:
+  display_name: "儿童英语学习卡片批量生成器"
+  short_description: "批量生成可下载英语学习卡、互动页、复习页和分享文案"
+  brand_color: "#77C9D4"
+  default_prompt: "使用 $batch-english-learning-card-maker 按年龄、年级、英语等级或内置预设生成可下载儿童英语学习卡和主题课程包；默认输出 PNG 图片、download.html、lesson-player.html、parent-dashboard.html、review-plan.html、usage-guide.txt、share-copy.txt、next-pack-suggestion.txt、preview.html、manifest.csv 和 english-learning-pack.zip，不要只回复内容表格；同时检查正确配图、音标、中文释义和内容难度，并可生成互动学习、小测、家长复习计划和免费分享材料。"
+policy:
+  allow_implicit_invocation: true
