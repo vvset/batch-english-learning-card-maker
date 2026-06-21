@@ -14,17 +14,27 @@ ul{line-height:1.9;padding-left:20px}code{background:#f1eadf;border-radius:6px;p
 <main>
   <section class="hero">
     <h1>Batch English Learning Card Maker</h1>
-    <p class="sub">A Codex Skill for batch-generating children's English learning cards, lesson pages, parent guides, review plans, quality reports, and downloadable ZIP packs.</p>
+    <p class="sub">A Codex and Claude compatible Skill package for batch-generating children's English learning cards, lesson pages, parent guides, review plans, quality reports, and downloadable ZIP packs.</p>
     <div class="switch">
       <button onclick="showLang('zh')">简体中文</button>
       <button class="soft" onclick="showLang('en')">English</button>
       <a class="button soft" href="./README.zh-CN.md">中文 README</a>
       <a class="button soft" href="./README.md">English README</a>
+      <a class="button soft" href="./INSTALL.zh-CN.md">安装说明</a>
+      <a class="button soft" href="./INSTALL.md">Install</a>
     </div>
   </section>
 
   <section id="zh" class="lang active">
     <div class="grid">
+      <div class="panel">
+        <h2>支持平台</h2>
+        <ul>
+          <li>Codex：复制到 Codex skills 目录即可使用。</li>
+          <li>Claude / Claude Code：支持自定义 Skills 时可导入同一个文件夹。</li>
+          <li>也可以不安装，直接运行 PowerShell 脚本生成学习包。</li>
+        </ul>
+      </div>
       <div class="panel">
         <h2>它能做什么</h2>
         <ul>
@@ -55,6 +65,14 @@ ul{line-height:1.9;padding-left:20px}code{background:#f1eadf;border-radius:6px;p
 
   <section id="en" class="lang">
     <div class="grid">
+      <div class="panel">
+        <h2>Platform support</h2>
+        <ul>
+          <li>Codex: copy the folder into your Codex skills directory.</li>
+          <li>Claude / Claude Code: import the same folder when custom Skills are enabled.</li>
+          <li>Direct script usage is also supported without installing the Skill.</li>
+        </ul>
+      </div>
       <div class="panel">
         <h2>What it does</h2>
         <ul>

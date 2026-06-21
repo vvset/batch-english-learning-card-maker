@@ -1,10 +1,21 @@
 # 儿童英语学习卡片批量生成器
 
-**[English](README.md) | 简体中文 | [语言切换页](index.html)**
+**[English](README.md) | 简体中文 | [安装说明](INSTALL.zh-CN.md) | [语言切换页](index.html)**
 
-Batch English Learning Card Maker 是一个 Codex Skill，用来批量生成儿童英语学习资料。它可以输出可下载的竖版 PNG 卡片、主题学习页、互动学习页、家长说明、复习计划、质量报告和 ZIP 学习包。
+Batch English Learning Card Maker 是一个 Codex 和 Claude 都可使用的 Skill 包，用来批量生成儿童英语学习资料。它可以输出可下载的竖版 PNG 卡片、主题学习页、互动学习页、家长说明、复习计划、质量报告和 ZIP 学习包。
 
-这个 Skill 适合中文家长、老师、内容创作者使用，尤其适合生成幼儿园、学前班、一年级、二年级、Pre-A1、A1、A2 或 Cambridge 儿童英语风格的学习卡。
+同一个 `skills/batch-english-learning-card-maker` 文件夹，可以安装到 Codex，也可以导入到支持自定义 Skills 的 Claude / Claude Code 环境中。
+
+这个 Skill 适合中文家长、老师、儿童英语资料制作者使用，尤其适合生成幼儿园、学前班、一年级、二年级、Pre-A1、A1、A2 或 Cambridge 儿童英语风格的学习卡。
+
+## 支持平台
+
+| 平台 | 是否支持 | 使用方式 |
+| --- | --- | --- |
+| Codex | 支持 | 把 Skill 文件夹复制到 Codex 的 skills 目录，然后让 Codex 使用 `batch-english-learning-card-maker`。 |
+| Claude / Claude Code | 支持自定义 Skills 时可用 | 把同一个 Skill 文件夹导入或复制到 Claude 的 skills 工作区，然后让 Claude 使用这个 Skill 生成学习包。 |
+
+详细步骤看：[INSTALL.zh-CN.md](INSTALL.zh-CN.md)
 
 ## 可以生成什么
 
@@ -30,7 +41,7 @@ skills/batch-english-learning-card-maker/
   assets/
 
 releases/
-  batch-english-learning-card-maker-portable-20260621-functional.zip
+  batch-english-learning-card-maker-portable-20260621-no-share.zip
 ```
 
 ## 快速使用
@@ -41,7 +52,7 @@ releases/
 pwsh -ExecutionPolicy Bypass -File .\scripts\generate_cards.ps1 -Preset grade1-weather -OutputDir .\output\grade1-weather-pack
 ```
 
-也可以直接这样对 Codex 说：
+也可以直接这样对 Codex 或 Claude 说：
 
 ```text
 使用 batch-english-learning-card-maker，生成一年级动物主题英语学习包，包含单词卡、短句卡、多句学习页、家长说明和可下载 ZIP。

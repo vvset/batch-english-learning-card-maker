@@ -1,10 +1,21 @@
 # Batch English Learning Card Maker
 
-**English | [简体中文](README.zh-CN.md) | [Language Switch Page](index.html)**
+**English | [简体中文](README.zh-CN.md) | [Install](INSTALL.md) | [Language Switch Page](index.html)**
 
-Batch English Learning Card Maker is a Codex Skill for generating children's English learning packs. It creates downloadable portrait PNG cards, lesson pages, interactive HTML pages, parent guides, review plans, quality reports, and ZIP bundles.
+Batch English Learning Card Maker is a Codex and Claude compatible Skill package for generating children's English learning packs. It creates downloadable portrait PNG cards, lesson pages, interactive HTML pages, parent guides, review plans, quality reports, and ZIP bundles.
 
-The Skill is designed for Chinese-speaking parents, teachers, and creators who want to produce English learning cards for preschool, kindergarten, primary school, CEFR Pre-A1/A1/A2, or Cambridge-style children's English.
+The same `skills/batch-english-learning-card-maker` folder can be installed in Codex or imported into a Claude / Claude Code environment that supports custom Skills.
+
+The Skill is designed for Chinese-speaking parents, teachers, and learning-material creators who want to produce English learning cards for preschool, kindergarten, primary school, CEFR Pre-A1/A1/A2, or Cambridge-style children's English.
+
+## Platform Support
+
+| Platform | Support | How to use |
+| --- | --- | --- |
+| Codex | Supported | Copy the Skill folder into your Codex skills directory, then ask Codex to use `batch-english-learning-card-maker`. |
+| Claude / Claude Code | Supported when custom Skills are enabled | Import or copy the same Skill folder into your Claude skills workspace, then ask Claude to use this Skill to generate a learning pack. |
+
+See [INSTALL.md](INSTALL.md) for step-by-step installation.
 
 ## What It Can Generate
 
@@ -30,7 +41,7 @@ skills/batch-english-learning-card-maker/
   assets/
 
 releases/
-  batch-english-learning-card-maker-portable-20260621-functional.zip
+  batch-english-learning-card-maker-portable-20260621-no-share.zip
 ```
 
 ## Quick Start

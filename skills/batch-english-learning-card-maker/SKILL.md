@@ -4,7 +4,7 @@ description: >-
   批量生成可下载的儿童英语学习图片卡片和主题课程包，输出 PNG/JPG、预览页、manifest 和 ZIP 包，包含英文短句、英文单词、单词+例句组合卡、多句组合学习页，并为每条内容附上 IPA 音标和中文意思。
   内置已审核动物插画，支持素材指纹校验、错图拦截、生成前预检、边缘截断风险检测和自适应排版。
   默认生成 download.html、互动学习页、今日学习单、家长进度页、复习安排、小白使用说明和下一包建议，适合家长、老师和儿童英语启蒙资料制作者直接下载使用。
-  Use when Codex needs to create many portrait PNG/JPG children's English learning posters, 儿童英语卡片, 英语单词卡, 英文短句卡, 幼儿英语启蒙图, 学前班英语, 一年级英语, 多句组合学习页,
+  Use when Codex, Claude, Claude Code, or another custom-Skill-compatible assistant needs to create many portrait PNG/JPG children's English learning posters, 儿童英语卡片, 英语单词卡, 英文短句卡, 幼儿英语启蒙图, 学前班英语, 一年级英语, 多句组合学习页,
   Duolingo-style lesson cards, watercolor children's-book backgrounds, central readable typography, translations, preview pages, manifests,
   国内课标, 国际英语分级, Cambridge Starters/Movers/Flyers, CEFR Pre-A1/A1/A2, preschool, kindergarten, grade 1, grade 2, or 3-12 year-old children's English.
 ---
