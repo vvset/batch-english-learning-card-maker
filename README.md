@@ -17,7 +17,6 @@ The Skill is designed for Chinese-speaking parents, teachers, and creators who w
 - Parent dashboard
 - Review plan
 - A4 print layout
-- Share copy for social posts
 - Quality, visual coverage, and content gap reports
 - Parent-use ZIP and full inspection ZIP
 
@@ -78,4 +77,3 @@ visual-coverage.csv
 - Chinese CSV files are exported with UTF-8 BOM for Windows Excel compatibility.
 - The parent-use ZIP excludes technical reports by default.
 - Formal animal assets are checked through the bundled asset registry.
-

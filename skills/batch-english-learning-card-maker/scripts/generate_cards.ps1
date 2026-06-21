@@ -2769,7 +2769,7 @@ $null = Save-Card $parentGuideCardName {
     '3. 先看图说中文，再跟读英文和音标。',
     '4. 答错或读不出的内容，第二天先复习。',
     '5. 要打印时打开「A4 打印」。',
-    '6. 要分享给别人时复制「分享文案」。'
+    '6. 想继续学习时查看「下一套建议」。'
   )
   $y = 410
   foreach ($step in $steps) {
@@ -2841,7 +2841,6 @@ details{margin-top:18px;background:white;border-radius:14px;padding:16px}summary
       <a class="secondary" href="./parent-guide-card.png">家长说明卡</a>
       $printLinkHtml
       <a class="secondary" href="./usage-guide.txt">小白使用说明</a>
-      <a class="secondary" href="./share-copy.txt">分享文案</a>
       <a class="secondary" href="./preview.html">预览全部卡片</a>
     </div>
     <div class="navgrid">
@@ -2849,7 +2848,7 @@ details{margin-top:18px;background:white;border-radius:14px;padding:16px}summary
       <a class="navcard" href="./today-learning-sheet.html"><strong>今天学什么</strong><span>按 5-10 分钟安排单词、短句和家长提问。</span></a>
       $printNavHtml
       <a class="navcard" href="./review-plan.html"><strong>我要复习</strong><span>按天安排复习，避免学完就忘。</span></a>
-      <a class="navcard" href="./share-copy.txt"><strong>我要分享</strong><span>复制给小红书、社群或家长群。</span></a>
+      <a class="navcard" href="./next-pack-suggestion.txt"><strong>下一套学什么</strong><span>继续生成同难度的新主题学习包。</span></a>
     </div>
     <p class="note">给家长或用户时，优先发送「家长使用包」或这个下载入口；完整 ZIP 包保留了全部质检和素材检查文件。</p>
   </section>
@@ -3192,45 +3191,10 @@ $usageGuide = @"
 第五步：用 review-plan.html 复习。
 当天学新内容，第二天先复习旧内容。不会的内容写进 learning-record.csv。
 
-第六步：需要分享给别人时，复制 share-copy.txt。
-里面已经写好适合小红书、社群或家长群发布的说明。
-
-第七步：想继续生成下一套时，看 next-pack-suggestion.txt。
+第六步：想继续生成下一套时，看 next-pack-suggestion.txt。
 里面会给出更适合继续学习的主题和一键预设名称。
 "@
 Set-Content -LiteralPath $usageGuidePath -Value $usageGuide -Encoding UTF8
-
-$shareCopyPath = Join-Path $OutputDir 'share-copy.txt'
-$sampleItems = @($taggedManifest | Where-Object { $_.english } | Select-Object -First 5 | ForEach-Object {
-  "- $($_.english) $($_.phonetic)：$($_.meaning)"
-}) -join "`r`n"
-$shareCopy = @"
-儿童英语启蒙学习卡｜可下载、可点读、可打印
-
-这套学习包适合中文家长带孩子做英语启蒙。每张卡都包含英文、IPA 音标、中文意思和直观配图，孩子可以先看图理解，再听英文跟读。
-
-本包主题：$script:ThemeLabel
-适合阶段：$Stage
-内容数量：$($taggedManifest.Count) 张/页
-
-里面有什么：
-1. PNG 学习卡片，适合保存或打印。
-2. download.html，一页打开全部资源。
-3. lesson-player.html，孩子可以点读和做中文意思小测。
-4. parent-dashboard.html，家长可以看今天学什么、哪些需要复习。
-5. review-plan.html，按天安排复习，避免学完就忘。
-6. quality-report.csv，检查英文、音标、中文和排版是否完整。
-
-示例内容：
-$sampleItems
-
-推荐使用方式：
-每天 5-10 分钟。先听英文，再跟读，最后看中文意思。不会的内容不要硬背，第二天放进复习。
-
-如果你也想生成类似卡片，可以直接说：
-使用 batch-english-learning-card-maker，按一年级动物主题生成完整英语学习包。
-"@
-Set-Content -LiteralPath $shareCopyPath -Value $shareCopy -Encoding UTF8
 
 $reviewPlanPath = Join-Path $OutputDir 'review-plan.html'
 $reviewItems = @($taggedManifest | Where-Object { $_.type -in @('word','sentence','combo') } | Select-Object -First 12)
@@ -3299,7 +3263,7 @@ Set-Content -LiteralPath $nextPackSuggestionPath -Value $nextPackText -Encoding 
 
 $bundleSummaryPath = Join-Path $OutputDir 'bundle-summary.txt'
 $optionalFiles = New-Object System.Collections.Generic.List[string]
-foreach ($freeFile in @('usage-guide.txt','share-copy.txt','review-plan.html','today-learning-sheet.html','next-pack-suggestion.txt','parent-guide-card.png','content-gap-report.csv','creator-next-actions.txt')) {
+foreach ($freeFile in @('usage-guide.txt','review-plan.html','today-learning-sheet.html','next-pack-suggestion.txt','parent-guide-card.png','content-gap-report.csv','creator-next-actions.txt')) {
   $optionalFiles.Add($freeFile)
 }
 if ($PrintLayout) { $optionalFiles.Add('print-a4.html') }
@@ -3352,7 +3316,6 @@ $optionalFilesText = if ($optionalFiles.Count -gt 0) {
 - parent-dashboard.html
 - review-plan.html
 - usage-guide.txt
-- share-copy.txt
 - next-pack-suggestion.txt
 - parent-guide-card.png
 - qa-dashboard.html
@@ -3382,7 +3345,6 @@ if ($ExportZip) {
     'parent-dashboard.html',
     'review-plan.html',
     'usage-guide.txt',
-    'share-copy.txt',
     'next-pack-suggestion.txt',
     'parent-guide-card.png',
     'preview.html',
@@ -3440,7 +3402,6 @@ Write-Output "Today learning sheet: $todayLearningSheetPath"
 Write-Output "Parent dashboard: $parentDashboardPath"
 Write-Output "Review plan: $reviewPlanPath"
 Write-Output "Usage guide: $usageGuidePath"
-Write-Output "Share copy: $shareCopyPath"
 Write-Output "Next pack suggestion: $nextPackSuggestionPath"
 Write-Output "Parent guide card: $parentGuideCardPath"
 Write-Output "QA dashboard: $qaDashboardPath"

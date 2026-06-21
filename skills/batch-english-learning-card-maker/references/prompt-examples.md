@@ -2,12 +2,12 @@
 
 Use these examples when the user wants a simple way to call the skill.
 
-Default meaning of `生成`: create downloadable card files, not only a Markdown table. Unless the prompt says `先预览`, `先列内容`, or `不生成图片`, run the batch script and return PNG cards, `download.html`, `lesson-player.html`, `parent-dashboard.html`, `review-plan.html`, `usage-guide.txt`, `share-copy.txt`, `next-pack-suggestion.txt`, `preview.html`, `manifest.csv`, and `english-learning-pack.zip`.
+Default meaning of `生成`: create downloadable card files, not only a Markdown table. Unless the prompt says `先预览`, `先列内容`, or `不生成图片`, run the batch script and return PNG cards, `download.html`, `lesson-player.html`, `today-learning-sheet.html`, `parent-dashboard.html`, `review-plan.html`, `usage-guide.txt`, `next-pack-suggestion.txt`, `preview.html`, `manifest.csv`, and `english-learning-pack.zip`.
 
-For free distribution, RedSkill mounting, Xiaohongshu sharing, or beginner users, prefer a built-in preset so the output is immediately usable.
+For beginner users, parents, teachers, or public free-download packs, prefer a built-in preset so the output is immediately usable.
 
 ```text
-使用 batch-english-learning-card-maker，按 grade1-weather 预设一键生成免费可分享英语学习包，包含可下载 ZIP、互动学习页、家长进度页、复习安排和分享文案。
+使用 batch-english-learning-card-maker，按 grade1-weather 预设一键生成免费英语学习包，包含可下载 ZIP、互动学习页、今日学习单、家长进度页和复习安排。
 ```
 
 ```text

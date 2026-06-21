@@ -3,7 +3,7 @@ name: batch-english-learning-card-maker
 description: >-
   批量生成可下载的儿童英语学习图片卡片和主题课程包，输出 PNG/JPG、预览页、manifest 和 ZIP 包，包含英文短句、英文单词、单词+例句组合卡、多句组合学习页，并为每条内容附上 IPA 音标和中文意思。
   内置已审核动物插画，支持素材指纹校验、错图拦截、生成前预检、边缘截断风险检测和自适应排版。
-  默认生成 download.html、互动学习页、家长进度页、复习安排、分享文案、小白使用说明和下一包建议，适合免费分发、RedSkill 挂载、小红书笔记分享和家长直接下载使用。
+  默认生成 download.html、互动学习页、今日学习单、家长进度页、复习安排、小白使用说明和下一包建议，适合家长、老师和儿童英语启蒙资料制作者直接下载使用。
   Use when Codex needs to create many portrait PNG/JPG children's English learning posters, 儿童英语卡片, 英语单词卡, 英文短句卡, 幼儿英语启蒙图, 学前班英语, 一年级英语, 多句组合学习页,
   Duolingo-style lesson cards, watercolor children's-book backgrounds, central readable typography, translations, preview pages, manifests,
   国内课标, 国际英语分级, Cambridge Starters/Movers/Flyers, CEFR Pre-A1/A1/A2, preschool, kindergarten, grade 1, grade 2, or 3-12 year-old children's English.
@@ -22,7 +22,7 @@ description: >-
 - 一课一练课程包
 - 7天学习包和每日打卡计划
 - 互动练习页、自然拼读包、学习记录表
-- 可分享免费学习包、分享文案、小白使用说明、复习安排和下一包推荐
+- 可下载免费学习包、小白使用说明、复习安排和下一包推荐
 - 缺素材提示词包、练习答案表、家长每日 HTML 指南
 - 按年龄、年级、国内课标、国际分级自动匹配内容
 - 完整学习包、正式完整包、主题推荐、方案预览、严格素材校验、练习图片、难度递进、打印拼版、zip 打包和质量等级检查
@@ -50,10 +50,9 @@ description: >-
 - `parent-dashboard.html` 家长进度页
 - `review-plan.html` 家长复习安排
 - `usage-guide.txt` 小白使用说明
-- `share-copy.txt` 可复制分享文案
 - `next-pack-suggestion.txt` 下一套学习包建议
 - `parent-guide-card.png` 家长说明卡，一张图说明怎么带孩子学
-- `parent-use-pack.zip` 家长使用包，只放普通家长会直接打开的学习、打印、复习、分享文件
+- `parent-use-pack.zip` 家长使用包，只放普通家长会直接打开的学习、打印、复习和说明文件
 - `preview.html` 预览页
 - `manifest.csv` 内容清单
 - `quality-report.csv` 质量报告
@@ -67,9 +66,9 @@ description: >-
 - 类型值使用 `单词卡`、`短句卡`、`单词+短句卡`、`多句学习页`，不要直接显示 `word`、`sentence`、`combo`、`lesson`。
 - `status`、`edge_status`、`generation_status` 等状态字段必须显示中文，例如 `已完成`、`已减少（不重复凑数）`、`通过`、`需要检查`，不要直接暴露 `fulfilled`、`reduced-no-repeat`、`pass` 这类内部状态码。
 - 下载入口页的“关键文件”必须说明用途，例如“质量报告：检查英文、音标、中文、排版和问题项”，不要只列技术文件名。
-- 下载入口页必须优先展示“我要给孩子看、我要打印、我要复习、我要分享”等中文操作入口。质检 CSV、素材检查 CSV 和完整清单放入“高级检查文件”，不要作为普通用户第一眼看到的主入口。
+- 下载入口页必须优先展示“我要给孩子看、今天学什么、我要打印、我要复习、下一套学什么”等中文操作入口。质检 CSV、素材检查 CSV 和完整清单放入“高级检查文件”，不要作为普通用户第一眼看到的主入口。
 
-除非用户明确说“先预览方案”“先列内容”“只要表格”“不生成图片”，否则不要把 Markdown 表格当作最终交付。可以先简单说明正在生成，但最终回复必须给出输出文件夹、`download.html`、`parent-use-pack.zip`、`lesson-player.html`、`today-learning-sheet.html`、`parent-dashboard.html`、`review-plan.html`、`share-copy.txt` 和 ZIP 路径。
+除非用户明确说“先预览方案”“先列内容”“只要表格”“不生成图片”，否则不要把 Markdown 表格当作最终交付。可以先简单说明正在生成，但最终回复必须给出输出文件夹、`download.html`、`parent-use-pack.zip`、`lesson-player.html`、`today-learning-sheet.html`、`parent-dashboard.html`、`review-plan.html` 和 ZIP 路径。
 
 如果当前运行环境不能写文件、不能执行脚本或不能提供附件下载，要明确说明限制，并给出可复制执行的命令；不要声称已经生成可下载卡片。
 
@@ -114,7 +113,7 @@ description: >-
 ```
 
 ```text
-使用 batch-english-learning-card-maker，按 grade1-weather 预设一键生成免费可分享英语学习包。
+使用 batch-english-learning-card-maker，按 grade1-weather 预设一键生成免费英语学习包。
 ```
 
 ```text
@@ -147,7 +146,7 @@ description: >-
 
 ## 一键预设
 
-当用户说“按年龄生成”“按年级生成”“不知道怎么选”“免费给家长用”“直接生成一套”时，优先使用内置预设。预设会自动开启完整学习包、ZIP 打包、互动学习页、家长进度页、复习安排、分享文案和下一包建议。
+当用户说“按年龄生成”“按年级生成”“不知道怎么选”“免费给家长用”“直接生成一套”时，优先使用内置预设。预设会自动开启完整学习包、ZIP 打包、互动学习页、今日学习单、家长进度页、复习安排和下一包建议。
 
 推荐预设：
 
